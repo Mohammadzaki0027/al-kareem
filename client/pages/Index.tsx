@@ -573,7 +573,7 @@ const testimonials = [
                 }}
               >
                 <img
-                  src="/images/skinhospital.jpeg"
+                  src="/images/streth.jpg"
                   alt="Al Kareem Hospital"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
@@ -914,7 +914,7 @@ const testimonials = [
                 }}
               >
                 <img
-                  src="/images/doctor.jpg"
+                  src="/images/drphoto.jpg"
                   alt="Dr. Nadeem Shaikh"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
