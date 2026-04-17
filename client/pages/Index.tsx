@@ -192,7 +192,7 @@ const testimonials = [
 ];
 
   const stats = [
-    { value: "5+", label: "Years Experience" },
+    { value: "4+", label: "Years Experience" },
     { value: "1000+", label: "Patients Treated" },
     { value: "24/7", label: "Care & Support" },
     { value: "4.9★", label: "Patient Rating" },
