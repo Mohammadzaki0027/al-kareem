@@ -76,6 +76,12 @@ const galleryItems = [
     name: "Leech Therapy (Jalauka)",
     desc: "Natural therapy using medicinal leeches for blood purification and treatment of skin and joint conditions.",
   },
+    {
+    img: "/images/diagnosis.jpeg",
+    name: "Diagnosis",
+    desc: "Natural therapy using medicinal leeches for blood purification and treatment of skin and joint conditions.",
+  },
+
 ];
   const services = [
     {
@@ -84,6 +90,7 @@ const galleryItems = [
       description:
         "Comprehensive medical care for fever, infections, blood pressure, diabetes, and overall health management.",
     },
+  
     {
       icon: "👶",
       title: "Child Specialist",
