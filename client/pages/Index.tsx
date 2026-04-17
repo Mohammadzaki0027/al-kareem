@@ -20,6 +20,7 @@ export default function RedsignedIndex() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
 const galleryItems = [
+
     {
     img: "/images/saline.webp",
     name: "General Treatment",
@@ -888,7 +889,7 @@ const testimonials = [
                 }}
               >
                 <img
-                  src="/images/drphoto.jpg"
+                  src="/images/sonuImage.jpeg"
                   alt="Dr. Nadeem Shaikh"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
@@ -1138,7 +1139,7 @@ const testimonials = [
               About Al Kareem Hospital
             </h2>
           </motion.div>
-
+  
           <div
             className="about-grid"
             style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}
