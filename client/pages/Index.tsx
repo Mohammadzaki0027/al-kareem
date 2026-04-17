@@ -533,7 +533,7 @@ const testimonials = [
                 {[
                   { icon: "🛡️", text: "BUMS Certified" },
                   { icon: "⭐", text: "4.9/5 Rating" },
-                  { icon: "👨‍⚕️", text: "5+ Yrs Exp" },
+                  { icon: "👨‍⚕️", text: "4+ Yrs Exp" },
                 ].map((b, i) => (
                   <div
                     key={i}
