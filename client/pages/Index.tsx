@@ -10,15 +10,72 @@ import {
   Menu,
   X,
   ChevronRight,
-  Shield,
+
   Heart,
   Award,
 } from "lucide-react";
 import { useState } from "react";
 
 export default function RedsignedIndex() {
+  const [selectedImage, setSelectedImage] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
-
+const galleryItems = [
+    {
+    img: "/images/saline.webp",
+    name: "General Treatment",
+    desc: "Effective treatment for skin fungal infections, itching, and allergies with proper medication.",
+  },
+  {
+    img: "/images/hijama.jpeg",
+    name: "Hijama Therapy (Cupping)",
+    desc: "Traditional cupping therapy used to improve blood circulation, detoxify the body, and relieve pain.",
+  },
+  {
+    img: "/images/struc.jpeg",
+    name: "Wound Suturing (Stitches)",
+    desc: "Professional stitching procedure for cuts and wounds to ensure proper healing and prevent infection.",
+  },
+  {
+    img: "/images/fungal.jpeg",
+    name: "Fungal Infection Treatment",
+    desc: "Effective treatment for skin fungal infections, itching, and allergies with proper medication.",
+  },
+  {
+    img: "/images/stiches.jpeg",
+    name: "Medical Instruments",
+    desc: "Sterilized and advanced medical instruments used for safe and hygienic treatments.",
+  },
+  {
+    img: "/images/weightchild.jpeg",
+    name: "Child Health Checkup",
+    desc: "Regular monitoring of child growth, weight, and overall health with expert pediatric care.",
+  },
+  {
+    img: "/images/mole.avif",
+    name: "Mole Removal Treatment",
+    desc: "Advanced and safe mole removal procedure with minimal pain and faster healing.",
+  },
+  {
+    img: "/images/bp.webp",
+    name: "Blood Pressure Check",
+    desc: "Accurate monitoring of blood pressure for early detection and management of health conditions.",
+  },
+  {
+    img: "/images/Venesections Therapy Fasad.jpeg",
+    name: "Venesection Therapy (Fasd)",
+    desc: "Traditional bloodletting therapy used for detoxification and improving blood circulation.",
+  },
+  {
+    img: "/images/electrosurgery.jpeg",
+    name: "Electrosurgery Equipment",
+    desc: "Modern equipment used for precise surgical procedures with controlled and safe techniques.",
+  },
+  {
+    img: "/images/leach.jpeg",
+    name: "Leech Therapy (Jalauka)",
+    desc: "Natural therapy using medicinal leeches for blood purification and treatment of skin and joint conditions.",
+  },
+];
   const services = [
     {
       icon: "🩺",
@@ -263,7 +320,7 @@ const testimonials = [
                 fontFamily: "'Playfair Display', serif",
               }}
             >
-              A
+              A.K
             </div>
             <div>
               <div style={{ fontWeight: 700, fontSize: 17, color: "#064e3b" }}>
@@ -280,9 +337,9 @@ const testimonials = [
             className="hidden-mobile"
             id="desktop-nav"
           >
-            {["#services", "#doctor", "#about", "#contact"].map((href, i) => (
+            {["#services","#gallery", "#doctor", "#about", "#contact"].map((href, i) => (
               <a key={i} href={href} className="nav-link">
-                {["Services", "Doctor", "About", "Contact"][i]}
+                {["Services","Gallery", "Doctor", "About", "Contact"][i]}
               </a>
             ))}
             <a
@@ -334,7 +391,7 @@ const testimonials = [
               gap: 16,
             }}
           >
-            {["Services", "Doctor", "About", "Contact"].map((item) => (
+            {["Services", "Gallery", "Doctor", "About", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -419,7 +476,7 @@ const testimonials = [
               transition={{ duration: 0.8 }}
             >
               <div className="section-tag">
-                🏥 Trusted Healthcare Since 2019
+                🏥 Trusted Healthcare
               </div>
               <h1
                 style={{
@@ -712,7 +769,120 @@ const testimonials = [
           </div>
         </div>
       </section>
+{/* ── GALLERY ── */}
+<section
+  id="gallery"
+  style={{ padding: "100px 24px", background: "white" }}
+>
+  <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+    
+    {/* ── HEADER ── */}
+    <div style={{ textAlign: "center", marginBottom: 60 }}>
+      <div className="section-tag">🖼️ Our Setup</div>
+      <h2
+        style={{
+          fontSize: "clamp(30px, 4vw, 46px)",
+          fontFamily: "'Playfair Display', serif",
+          fontWeight: 700,
+          color: "#064e3b",
+          marginBottom: 12,
+        }}
+      >
+        Instruments & Clinic Gallery
+      </h2>
+      <p
+        style={{
+          fontSize: 16,
+          color: "#4b7a62",
+          maxWidth: 500,
+          margin: "0 auto",
+        }}
+      >
+        Explore our advanced instruments and hygienic clinical environment.
+      </p>
+    </div>
 
+    {/* ── GRID ── */}
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+        gap: 20,
+      }}
+    >
+      {galleryItems.map((item, i) => (
+        <motion.div
+          key={i}
+          onClick={() => setSelectedImage(item)}
+          whileHover={{ scale: 1.03 }}
+          style={{
+            borderRadius: 20,
+            overflow: "hidden",
+            position: "relative",
+            cursor: "pointer",
+          }}
+        >
+          {/* IMAGE */}
+          <img
+            src={item.img}
+            alt={item.name}
+            style={{
+              width: "100%",
+              height: 220,
+              objectFit: "cover",
+              transition: "transform 0.4s",
+            }}
+          />
+
+          {/* OVERLAY */}
+          <div
+            className="gallery-overlay"
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(to top, rgba(6,78,59,0.8), transparent)",
+              display: "flex",
+              alignItems: "flex-end",
+              padding: 16,
+              opacity: 0,
+              transition: "opacity 0.3s",
+            }}
+          >
+            <span
+              style={{
+                color: "white",
+                fontWeight: 600,
+                fontSize: 14,
+              }}
+            >
+              {item.name}
+            </span>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+
+  {/* ── STYLES ── */}
+  <style>{`
+    .gallery-overlay:hover {
+      opacity: 1 !important;
+    }
+
+    .gallery-overlay {
+      opacity: 0;
+    }
+
+    div:hover > .gallery-overlay {
+      opacity: 1;
+    }
+
+    img:hover {
+      transform: scale(1.08);
+    }
+  `}</style>
+</section>
       {/* ── DOCTOR ── */}
       <section
         id="doctor"
@@ -786,7 +956,7 @@ const testimonials = [
                       flexWrap: "wrap",
                     }}
                   >
-                    {["BUMS", "PGDEMS", "5+ Yrs"].map((b) => (
+                    {["BUMS", "PGDEMS", "4+ Yrs"].map((b) => (
                       <span
                         key={b}
                         style={{
@@ -854,7 +1024,7 @@ const testimonials = [
                   label: "Qualification",
                   value: "BUMS, PGDEMS (Pune) CCH, CSD, Ex Medical Officer",
                 },
-                { label: "Experience", value: "5+ Years of Clinical Practice" },
+                { label: "Experience", value: "4+ Years of Clinical Practice" },
               ].map((item) => (
                 <div
                   key={item.label}
@@ -1620,6 +1790,7 @@ href="https://www.google.com/maps?q=AL+KARIM+CLINIC+Malkapur"
                 heading: "Quick Links",
                 items: [
                   ["Services", "#services"],
+                        ["Gallery", "#gallery"],
                   ["Doctor", "#doctor"],
                   ["About", "#about"],
                   ["Contact", "#contact"],
