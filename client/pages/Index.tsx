@@ -587,33 +587,7 @@ const testimonials = [
                 />
               </div>
 
-              {/* Floating: Rating */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="glass-card"
-                style={{
-                  position: "absolute",
-                  top: 24,
-                  right: -20,
-                  padding: "14px 18px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 10,
-                }}
-              >
-                <div style={{ fontSize: 28 }}>⭐</div>
-                <div>
-                  <div
-                    style={{ fontWeight: 700, fontSize: 18, color: "#064e3b" }}
-                  >
-                    4.9/5
-                  </div>
-                  <div style={{ fontSize: 12, color: "#4b7a62" }}>
-                    Patient Rating
-                  </div>
-                </div>
-              </motion.div>
+       
 
               {/* Floating: Certified */}
               <motion.div
